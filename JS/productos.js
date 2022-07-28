@@ -1,7 +1,7 @@
 let stockProductos = [
     {id:1, nombre: "Mochila Pierre Cardin", tipo: "mochila",descripcion: "Mochila reforzada de 17' con espacio para portanotebook", precio: 13000, color:"azul", img: '../images/Mochila Pierre Cardin Azul USB.png'},
-    { id:2, nombre: "Mochila Pierre Cardin", tipo: "mochila",descripcion: "Mochila reforzada de 17' con espacio para portanotebook", precio: 13000,color:"gris", img: '../images/Mochila Pierre Cardin Gris USB.png'},
-    { id:3, nombre: "Mochila Head", tipo: "mochila",descripcion: "Mochila de 16' con 2 compartimientos", precio: 7500,color:"negra",img: '../images/Mochila Head Negro.png'},
+    {id:2, nombre: "Mochila Pierre Cardin", tipo: "mochila",descripcion: "Mochila reforzada de 17' con espacio para portanotebook", precio: 13000,color:"gris", img: '../images/Mochila Pierre Cardin Gris USB.png'},
+    {id:3, nombre: "Mochila Head", tipo: "mochila",descripcion: "Mochila de 16' con 2 compartimientos", precio: 7500,color:"negra",img: '../images/Mochila Head Negro.png'},
     {id:3, nombre: "Bolsito Cruzado", tipo: "bolso",descripcion: "100% de cuero vacuno con 2 compartimientos", precio: 8700, color:"Marron",img: '../images/bolsito marron.png'},
     {id:4, nombre: "Bolsito Cruzado", tipo: "bolso",descripcion: "100% de cuero vacuno con 2 compartimientos", precio: 8700, color:"Rosa Claro",img: '../images/bolsito rosa claro.png'},
     {id:5, nombre: "Bolsito Cruzado", tipo: "bolso",descripcion: "BOLSITO CRUZADO,3 CIERRES,MATERIAL PU -INTERIOR MATERIA NO TEJIDO", precio: 8700, color:"Gris",img: '../images/Bolsito.png'},

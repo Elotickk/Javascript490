@@ -1,6 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two&family=Poppins&family=Roboto+Condensed:wght@300;400&display=swap");
 /*PaLeta de Colores */
 /*NAV START*/
+.product-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
+
+.product-cart-image {
+  max-width: 100px;
+  max-height: 250px; }
+
+.name-product-cart {
+  color: #fff;
+  align-self: center;
+  font-family: "Poppins", sans-serif; }
+
 * {
   margin: 0px;
   padding: opx; }
@@ -128,8 +142,10 @@
 
 .cart-price {
   color: white;
-  font-size: 1.5rem;
-  font-weight: bolder; }
+  font-size: 1.1rem;
+  font-weight: bolder;
+  align-self: center;
+  font-family: "Poppins", sans-serif; }
 
 .product-quantity {
   width: 4rem;
@@ -137,15 +153,16 @@
   margin-left: 3rem; }
 
 .remove-btn {
-  padding: 1em 2em;
+  padding: 1em 1em;
   background-color: red;
   color: white;
-  outline: none;
-  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  margin-left: 3rem;
   font-weight: bolder;
-  font-size: 1rem; }
+  font-size: 1rem;
+  height: 50px;
+  align-self: center;
+  text-align: center; }
 
 .remove-btn:active {
   transform: translateY(5px); }

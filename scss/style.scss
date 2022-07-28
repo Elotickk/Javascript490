@@ -19,6 +19,24 @@ $color5: #fff;
 
 /*NAV START*/
 
+.product-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.product-cart-image{
+    max-width: 100px;
+    max-height: 250px;
+}
+
+.name-product-cart{
+    color: $color5;
+    align-self: center;
+    font-family: $font4;
+}
+
 
 * {
     margin: 0px;
@@ -174,8 +192,10 @@ $color5: #fff;
 
 .cart-price {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: bolder;
+    align-self: center;
+    font-family: $font4;
 }
 
 .product-quantity {
@@ -185,15 +205,16 @@ $color5: #fff;
 }
 
 .remove-btn {
-    padding: 1em 2em;
+    padding: 1em 1em;
     background-color: red;
     color: white;
-    outline: none;
-    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    margin-left: 3rem;
     font-weight: bolder;
     font-size: 1rem;
+    height: 50px;
+    align-self: center;
+    text-align: center;
 }
 
 .remove-btn:active {

@@ -13,7 +13,12 @@ let stockProductos = [
     {id:9, nombre: "Kit Juego Set de Asado Carpincho", tipo: "mochila",descripcion: "Incluye cuchillo,tenedor y plato de madera para asado", precio: 5000, color:"marron",img: 'images/Set asado 2.png'},
 ]
 
+let carritoDeCompras = []
+
 let contenedorProductos = document.getElementById('contenedor-productos');
+let contadorCarrito = document.getElementById('contadorCarrito')
+let total = document.getElementById('precioTotal')
+
 
 function mostrarProductos(){
     stockProductos.forEach(item => {
@@ -47,13 +52,13 @@ carrito.addEventListener("click", ()=>{
     }
 })
 
-//cerrar
+/////cerrar/////
 const closeBtn = document.querySelector("#close-btn");
 
 closeBtn.addEventListener("click", ()=>{
     cartModalOverlay.classList.remove("open");
 })
-///Agregar Elementos al Carrito ///
+///Agregar Elementos al Carrito /////
 
 const addToCart = document.getElementsByClassName("add-to-cart")
 
@@ -79,8 +84,8 @@ function agregarElemento(prodID,prodName,precio,imagen){
     let contenedorProductos = document.querySelector(".product-rows");
     let elemProducto = `
         <div class="product-row" id="${prodID}">
-            <img class="product-image card-img-top align-self-center" src="${imagen}" alt="Card image" max-width="200px" max-height="200px"/>
-            <span>${prodName}</span>
+            <img class="product-cart-image card-img-top align-self-center" src="${imagen}" alt="Card image"/>
+            <span class="name-product-cart">${prodName}</span>
             <span class="cart-price">${precio}</span>
             <button class="remove-btn">Borrar</button>
         </div>
@@ -92,12 +97,14 @@ function agregarElemento(prodID,prodName,precio,imagen){
         boton.addEventListener("click", borrarElemento);
     }
     cantElementosCarrito();
+    // actualizarCarrito ();
 }
 
 function borrarElemento(e) {
     btn = e.target;
     btn.parentElement.parentElement.remove();
-    cantElementosCarrito()
+    cantElementosCarrito();
+    // actualizarCarrito ();
 }
 
 function cantElementosCarrito() {
@@ -105,3 +112,10 @@ function cantElementosCarrito() {
     let cartQuantity = document.querySelector(".cart-quantity");
     cartQuantity.innerText = cantidad.length;
 }
+
+// function  actualizarCarrito (){
+//     let cantidad = document.querySelectorAll(".cart-price");
+//     let cartQuantity = document.querySelector(".cart-price");
+//     console.log(cantidad)
+//     cartQuantity.innerText = cantidad.reduce((acc, el)=> acc + el.precio, 0)
+// }

@@ -19,7 +19,7 @@
   "homepage": "https://github.com/Elotickk/SASS#readme",
   "devDependencies": {
     "node-sass": "^7.0.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.19"
   },
   "dependencies": {
     "abbrev": "^1.1.1",
