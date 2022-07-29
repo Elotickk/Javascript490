@@ -19,25 +19,6 @@ $color5: #fff;
 
 /*NAV START*/
 
-.product-row{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.product-cart-image{
-    max-width: 100px;
-    max-height: 250px;
-}
-
-.name-product-cart{
-    color: $color5;
-    align-self: center;
-    font-family: $font4;
-}
-
-
 * {
     margin: 0px;
     padding: opx;
@@ -83,7 +64,7 @@ $color5: #fff;
     padding: 15px;
 }
 
-
+////Carrito de Compras ////
 .fa-cart-shopping {
     font-size: 2rem;
     margin: 1em 4em 0;
@@ -219,6 +200,24 @@ $color5: #fff;
 
 .remove-btn:active {
     transform: translateY(5px);
+}
+/// Diseño Carrito productos ///
+.product-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.product-cart-image{
+    max-width: 100px;
+    max-height: 250px;
+}
+
+.name-product-cart{
+    color: $color5;
+    align-self: center;
+    font-family: $font4;
 }
 
 @media (max-width: 1000px) {
@@ -426,7 +425,7 @@ $color5: #fff;
     font-size: 40px;
 }
 
-h2 {
+.productoh2 {
     text-align: center;
     background-color: $color2;
     color: $color5;

@@ -1,7 +1,18 @@
+// class Productos {
+//     constructor (id, nombre, tipo, descripcion, img, stock){
+//         this.id = id,
+//         this.nombre= nombre,
+//         this.tipo = tipo,
+//         this.descripcion = descripcion,
+//         this.img = img,
+//         this.stock = stock
+//     }
+// }
+
 let stockProductos = [
     {id:1, nombre: "Mochila Pierre Cardin", tipo: "mochila",descripcion: "Mochila reforzada de 17' con espacio para portanotebook", precio: 13000, color:"azul", img: 'images/Mochila Pierre Cardin Azul USB.png'},
-    { id:2, nombre: "Mochila Pierre Cardin", tipo: "mochila",descripcion: "Mochila reforzada de 17' con espacio para portanotebook", precio: 13000,color:"gris", img: 'images/Mochila Pierre Cardin Gris USB.png'},
-    { id:3, nombre: "Mochila Head", tipo: "mochila",descripcion: "Mochila de 16' con 2 compartimientos", precio: 7500,color:"negra",img: 'images/Mochila Head Negro.png'},
+    {id:2, nombre: "Mochila Pierre Cardin", tipo: "mochila",descripcion: "Mochila reforzada de 17' con espacio para portanotebook", precio: 13000,color:"gris", img: 'images/Mochila Pierre Cardin Gris USB.png'},
+    {id:3, nombre: "Mochila Head", tipo: "mochila",descripcion: "Mochila de 16' con 2 compartimientos", precio: 7500,color:"negra",img: 'images/Mochila Head Negro.png'},
     {id:3, nombre: "Bolsito Cruzado", tipo: "bolso",descripcion: "100% de cuero vacuno con 2 compartimientos", precio: 8700, color:"Marron",img: 'images/bolsito marron.png'},
     {id:4, nombre: "Bolsito Cruzado", tipo: "bolso",descripcion: "100% de cuero vacuno con 2 compartimientos", precio: 8700, color:"Rosa Claro",img: 'images/bolsito rosa claro.png'},
     {id:5, nombre: "Bolsito Cruzado", tipo: "bolso",descripcion: "BOLSITO CRUZADO,3 CIERRES,MATERIAL PU -INTERIOR MATERIA NO TEJIDO", precio: 8700, color:"Gris",img: 'images/Bolsito.png'},
@@ -14,12 +25,11 @@ let stockProductos = [
 ]
 
 let carritoDeCompras = []
-
 let contenedorProductos = document.getElementById('contenedor-productos');
 let contadorCarrito = document.getElementById('contadorCarrito')
 let total = document.getElementById('precioTotal')
 
-
+///     Mostrar Productos en el HTML con JS ////
 function mostrarProductos(){
     stockProductos.forEach(item => {
     let div = document.createElement('div')
@@ -33,7 +43,7 @@ function mostrarProductos(){
                         Precio<span class ="product-prize"> $${item.precio}</span>
                     </div>
                     `
-    contenedorProductos.appendChild(div) 
+    contenedorProductos.appendChild(div)
     })
 }
 
@@ -43,7 +53,7 @@ mostrarProductos()
 const carrito = document.querySelector("#cart");
 const cartModalOverlay = document.querySelector(".cart-modal-overlay"); 
 
-//abrir
+////abrir al hacer click en el carrito/////
 carrito.addEventListener("click", ()=>{
     if(cartModalOverlay.classList.contains("open")) {
         cartModalOverlay.classList.remove("open");
@@ -52,13 +62,12 @@ carrito.addEventListener("click", ()=>{
     }
 })
 
-/////cerrar/////
+/////cerrar al hacer click en la x en carrito /////
 const closeBtn = document.querySelector("#close-btn");
-
 closeBtn.addEventListener("click", ()=>{
     cartModalOverlay.classList.remove("open");
 })
-///Agregar Elementos al Carrito /////
+///Agregar Productos al Carrito cuando aprieto el boton /////
 
 const addToCart = document.getElementsByClassName("add-to-cart")
 
@@ -73,11 +82,13 @@ function agregarCarrito(e){
     let prodName = producto.querySelector("h4").innerText;
     let precio = producto.querySelector(".product-prize").innerText;
     let contenedorProd = producto.parentElement
+    console.log(contenedorProd)
     let imagen = contenedorProd.querySelector("img").src;
-    console.log(imagen);
     agregarElemento(prodID,prodName,precio,imagen)
+    // carritoDeCompras.push(precio)
+    // console.log(precio)
 }
-
+///Productos en el Carrito/////
 
 function agregarElemento(prodID,prodName,precio,imagen){
     let productRow = document.createElement("div");
@@ -97,14 +108,22 @@ function agregarElemento(prodID,prodName,precio,imagen){
         boton.addEventListener("click", borrarElemento);
     }
     cantElementosCarrito();
-    // actualizarCarrito ();
+    Swal.fire({
+        background: "#fff",
+        position: 'top-end',
+        icon: 'success',
+        title: 'Añadiste al carrito',
+        showConfirmButton: false,
+        timer: 1500
+    })
+    actualizarCarrito ();
 }
 
 function borrarElemento(e) {
     btn = e.target;
     btn.parentElement.parentElement.remove();
     cantElementosCarrito();
-    // actualizarCarrito ();
+    actualizarCarrito ();
 }
 
 function cantElementosCarrito() {
@@ -114,8 +133,6 @@ function cantElementosCarrito() {
 }
 
 // function  actualizarCarrito (){
-//     let cantidad = document.querySelectorAll(".cart-price");
-//     let cartQuantity = document.querySelector(".cart-price");
-//     console.log(cantidad)
-//     cartQuantity.innerText = cantidad.reduce((acc, el)=> acc + el.precio, 0)
+//     contadorCarrito.innerText = carritoDeCompras.length
+//     total.innerText = carritoDeCompras.reduce((acc, el)=> acc + el.precio, 0)
 // }
