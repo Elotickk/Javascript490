@@ -1,28 +1,35 @@
-// class Productos {
-//     constructor (id, nombre, tipo, descripcion, img, stock){
-//         this.id = id,
-//         this.nombre= nombre,
-//         this.tipo = tipo,
-//         this.descripcion = descripcion,
-//         this.img = img,
-//         this.stock = stock
-//     }
-// }
 
-let stockProductos = [
-    {id:1, nombre: "Mochila Pierre Cardin", tipo: "mochila",descripcion: "Mochila reforzada de 17' con espacio para portanotebook", precio: 13000, color:"azul", img: 'images/Mochila Pierre Cardin Azul USB.png'},
-    {id:2, nombre: "Mochila Pierre Cardin", tipo: "mochila",descripcion: "Mochila reforzada de 17' con espacio para portanotebook", precio: 13000,color:"gris", img: 'images/Mochila Pierre Cardin Gris USB.png'},
-    {id:3, nombre: "Mochila Head", tipo: "mochila",descripcion: "Mochila de 16' con 2 compartimientos", precio: 7500,color:"negra",img: 'images/Mochila Head Negro.png'},
-    {id:3, nombre: "Bolsito Cruzado", tipo: "bolso",descripcion: "100% de cuero vacuno con 2 compartimientos", precio: 8700, color:"Marron",img: 'images/bolsito marron.png'},
-    {id:4, nombre: "Bolsito Cruzado", tipo: "bolso",descripcion: "100% de cuero vacuno con 2 compartimientos", precio: 8700, color:"Rosa Claro",img: 'images/bolsito rosa claro.png'},
-    {id:5, nombre: "Bolsito Cruzado", tipo: "bolso",descripcion: "BOLSITO CRUZADO,3 CIERRES,MATERIAL PU -INTERIOR MATERIA NO TEJIDO", precio: 8700, color:"Gris",img: 'images/Bolsito.png'},
-    {id:6, nombre: "Bandolera Portacelular", tipo: "bandolera",descripcion: "100% de cuero vacuno con 2 compartimientos", precio: 4000, color:"Gris",img: 'images/Bandolera Portacelular3.png'},
-    {id:6, nombre: "Bandolera Portacelula", tipo: "bandolera",descripcion: "100% de cuero vacuno con 2 compartimientos", precio: 4000, color:"Rojo",img: 'images/Bandolera Portacelular.png'},
-    {id:7, nombre: "Portatermo", tipo: "portatermo",descripcion: "Portatermo de 100% Cuero vacuno", precio: 11000, color:"marron",img: 'images/20210708_185328.png'},
-    {id:8, nombre: "Portatermo", tipo: "portatermo",descripcion: "Portatermo de 100% Cuero vacuno", precio: 11000, color:"negro",img: 'images/20210708_184528.png'},
-    {id:8, nombre: "Mochila con carro S.W.A.T", tipo: "mochila",descripcion: "Mochila con carro reforzada de S.W.A.T", precio: 16000, color:"Negro",img: 'images/20210708_184813.png'},
-    {id:9, nombre: "Kit Juego Set de Asado Carpincho", tipo: "mochila",descripcion: "Incluye cuchillo,tenedor y plato de madera para asado", precio: 5000, color:"marron",img: 'images/Set asado 2.png'},
-]
+
+////Inventario de Productos ////
+
+class Productos {
+    constructor (id, nombre, tipo, descripcion, precio, color, img, stock){
+        this.id = id,
+        this.nombre= nombre,
+        this.tipo = tipo,
+        this.descripcion = descripcion,
+        this.precio = precio,
+        this.color = color,
+        this.img = img,
+        this.stock = stock
+    }
+}
+
+const products = []
+const prod1 = new Productos("1", "Mochila Pierre Cardin", "mochila", "Mochila reforzada de 17' con espacio para portanotebook", 13000, "azul",'images/Mochila Pierre Cardin Azul USB.png', 1);
+const prod2 = new Productos("2",  "Mochila Pierre Cardin",  "mochila", "Mochila reforzada de 17' con espacio para portanotebook",  13000, "gris",  'images/Mochila Pierre Cardin Gris USB.png',2)
+const prod3 = new Productos("3",  "Mochila Head",  "mochila", "Mochila de 16' con 2 compartimientos", 7500, "negra", 'images/Mochila Head Negro.png',2)
+const prod4 = new Productos("4",  "Bolsito Cruzado",  "bolso", "100% de cuero vacuno con 2 compartimientos",  8700, "Marron", 'images/bolsito marron.png',2)
+const prod5 = new Productos("5",  "Bolsito Cruzado",  "bolso", "100% de cuero vacuno con 2 compartimientos",  8700, "Rosa Claro", 'images/bolsito rosa claro.png',2)
+const prod6 = new Productos("6",  "Bolsito Cruzado",  "bolso", "BOLSITO CRUZADO,3 CIERRES,MATERIAL PU -INTERIOR MATERIA NO TEJO",  8700, "Gris", 'images/Bolsito.png',3)
+const prod7 = new Productos("7",  "Bandolera Portacelular",  "bandolera", "100% de cuero vacuno con 2 compartimientos",  4000, "Gris", 'images/Bandolera Portacelular3.png',5)
+const prod8 = new Productos("8",  "Bandolera Portacelula",  "bandolera", "100% de cuero vacuno con 2 compartimientos",  4000, "Rojo", 'images/Bandolera Portacelular.png',4)
+const prod9 = new Productos("9",  "Portatermo",  "portatermo", "Portatermo de 100% Cuero vacuno",  11000, "marron", 'images/20210708_185328.png',3)
+const prod10 = new Productos("10",  "Portatermo",  "portatermo", "Portatermo de 100% Cuero vacuno",  11000, "negro", 'images/20210708_184528.png',2)
+const prod11 = new Productos("11",  "Mochila con carro S.W.A.T",  "mochila", "Mochila con carro reforzada de S.W.A.T",  16000, "Negro", 'images/20210708_184813.png',3)
+const prod12 = new Productos("12",  "Kit Juego Set de Asado Carpincho",  "Asado", "Incluye cuchillo,tenedor y plato de madera para asado",  5000, "marron", 'images/Set asado 2.png',2)
+
+products.push(prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10, prod11, prod12)
 
 let carritoDeCompras = []
 let contenedorProductos = document.getElementById('contenedor-productos');
@@ -31,7 +38,7 @@ let total = document.getElementById('precioTotal')
 
 ///     Mostrar Productos en el HTML con JS ////
 function mostrarProductos(){
-    stockProductos.forEach(item => {
+    products.forEach(item => {
     let div = document.createElement('div')
     div.className = 'card col-md-3'
     div.id = `${item.id}`
@@ -49,44 +56,23 @@ function mostrarProductos(){
 
 mostrarProductos()
 
+////////////////
+
 
 const carrito = document.querySelector("#cart");
 const cartModalOverlay = document.querySelector(".cart-modal-overlay"); 
 
-////abrir al hacer click en el carrito/////
-carrito.addEventListener("click", ()=>{
-    if(cartModalOverlay.classList.contains("open")) {
-        cartModalOverlay.classList.remove("open");
-    } else {
-        cartModalOverlay.classList.add("open");
-    }
-})
-
-/////cerrar al hacer click en la x en carrito /////
-const closeBtn = document.querySelector("#close-btn");
-closeBtn.addEventListener("click", ()=>{
-    cartModalOverlay.classList.remove("open");
-})
-///Agregar Productos al Carrito cuando aprieto el boton /////
-
-const addToCart = document.getElementsByClassName("add-to-cart")
-
-for(let boton of addToCart){
-    boton.addEventListener("click", agregarCarrito)
-}
 
 function agregarCarrito(e){
     let boton = e.target;
     let producto = boton.parentElement;
-    let prodID = producto.getAttribute("id")
     let prodName = producto.querySelector("h4").innerText;
     let precio = producto.querySelector(".product-prize").innerText;
     let contenedorProd = producto.parentElement
-    console.log(contenedorProd)
+    let prodID = contenedorProd.getAttribute("id")
     let imagen = contenedorProd.querySelector("img").src;
     agregarElemento(prodID,prodName,precio,imagen)
-    // carritoDeCompras.push(precio)
-    // console.log(precio)
+    carritoDeCompras.push(precio)
 }
 ///Productos en el Carrito/////
 
@@ -116,14 +102,12 @@ function agregarElemento(prodID,prodName,precio,imagen){
         showConfirmButton: false,
         timer: 1500
     })
-    actualizarCarrito ();
 }
 
 function borrarElemento(e) {
     btn = e.target;
     btn.parentElement.parentElement.remove();
     cantElementosCarrito();
-    actualizarCarrito ();
 }
 
 function cantElementosCarrito() {
@@ -132,7 +116,30 @@ function cantElementosCarrito() {
     cartQuantity.innerText = cantidad.length;
 }
 
-// function  actualizarCarrito (){
-//     contadorCarrito.innerText = carritoDeCompras.length
-//     total.innerText = carritoDeCompras.reduce((acc, el)=> acc + el.precio, 0)
-// }
+function  actualizarCarrito (){
+    contadorCarrito.innerText = carritoDeCompras.length
+    total.innerText = carritoDeCompras.reduce((acc, el)=> acc + el.precio, 0)
+}
+
+
+///MODAL/////
+////abrir al hacer click en el carrito/////
+carrito.addEventListener("click", ()=>{
+    if(cartModalOverlay.classList.contains("open")) {
+        cartModalOverlay.classList.remove("open");
+    } else {
+        cartModalOverlay.classList.add("open");
+    }
+})
+
+/////cerrar al hacer click en la x en carrito /////
+const closeBtn = document.querySelector("#close-btn");
+closeBtn.addEventListener("click", ()=>{
+    cartModalOverlay.classList.remove("open");
+})
+///Agregar Productos al Carrito cuando aprieto el boton /////
+const addToCart = document.getElementsByClassName("add-to-cart")
+
+for(let boton of addToCart){
+    boton.addEventListener("click", agregarCarrito)
+}
