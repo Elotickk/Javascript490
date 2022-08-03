@@ -31,6 +31,16 @@ const prod12 = new Productos("12",  "Kit Juego Set de Asado Carpincho",  "Asado"
 
 products.push(prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10, prod11, prod12)
 
+class Carrito{
+    constructor(id,nombre,imagen,precio){
+        this.id = id,
+        this.nombre = nombre,
+        this.imagen = imagen,
+        this.precio = precio
+    }
+}
+
+
 let carritoDeCompras = []
 console.log(carritoDeCompras)
 let contenedorProductos = document.getElementById('contenedor-productos');
@@ -73,7 +83,7 @@ function agregarCarrito(e){
     let prodID = contenedorProd.getAttribute("id")
     let imagen = contenedorProd.querySelector("img").src;
     agregarElemento(prodID,prodName,precio,imagen)
-    carritoDeCompras.push(new Productos(prodID,imagen,precio))
+    carritoDeCompras.push(new Carrito(prodID,prodName,imagen,precio))
 }
 ///Productos en el Carrito/////
 
