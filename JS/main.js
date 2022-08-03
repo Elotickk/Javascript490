@@ -32,6 +32,7 @@ const prod12 = new Productos("12",  "Kit Juego Set de Asado Carpincho",  "Asado"
 products.push(prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10, prod11, prod12)
 
 let carritoDeCompras = []
+console.log(carritoDeCompras)
 let contenedorProductos = document.getElementById('contenedor-productos');
 let contadorCarrito = document.getElementById('contadorCarrito')
 let total = document.getElementById('precioTotal')
@@ -47,7 +48,7 @@ function mostrarProductos(){
                         <h4 class="card-title">${item.nombre}</h4>
                         <p class="card-text">${item.descripcion}</p>
                         <button class="add-to-cart add-to-cart btn btn-success">Comprar</button>
-                        Precio<span class ="product-prize"> $${item.precio}</span>
+                        <p>Precio:$<span class ="product-prize">${item.precio}</span></p>
                     </div>
                     `
     contenedorProductos.appendChild(div)
@@ -67,12 +68,12 @@ function agregarCarrito(e){
     let boton = e.target;
     let producto = boton.parentElement;
     let prodName = producto.querySelector("h4").innerText;
-    let precio = producto.querySelector(".product-prize").innerText;
+    let precio = parseFloat(producto.querySelector(".product-prize").innerText);
     let contenedorProd = producto.parentElement
     let prodID = contenedorProd.getAttribute("id")
     let imagen = contenedorProd.querySelector("img").src;
     agregarElemento(prodID,prodName,precio,imagen)
-    carritoDeCompras.push(precio)
+    carritoDeCompras.push(new Productos(prodID,imagen,precio))
 }
 ///Productos en el Carrito/////
 
