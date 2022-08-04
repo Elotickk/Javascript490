@@ -32,20 +32,19 @@ const prod12 = new Productos("12",  "Kit Juego Set de Asado Carpincho",  "Asado"
 products.push(prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10, prod11, prod12)
 
 class Carrito{
-    constructor(id,nombre,imagen,precio){
+    constructor(id,nombre,imagen,precio,cantidad){
         this.id = id,
         this.nombre = nombre,
         this.imagen = imagen,
-        this.precio = precio
+        this.precio = precio,
+        this.cantidad = cantidad
     }
 }
 
 
-let carritoDeCompras = []
-console.log(carritoDeCompras)
+
+
 let contenedorProductos = document.getElementById('contenedor-productos');
-let contadorCarrito = document.getElementById('contadorCarrito')
-let total = document.getElementById('precioTotal')
 
 ///     Mostrar Productos en el HTML con JS ////
 function mostrarProductos(){
@@ -69,9 +68,12 @@ mostrarProductos()
 
 ////////////////
 
-
+let carritoDeCompras = []
+console.log(carritoDeCompras)
 const carrito = document.querySelector("#cart");
-const cartModalOverlay = document.querySelector(".cart-modal-overlay"); 
+const cartModalOverlay = document.querySelector(".cart-modal-overlay");
+let contadorCarrito = document.getElementById('contadorCarrito')
+let total = document.getElementById('precioTotal') 
 
 
 function agregarCarrito(e){
@@ -82,8 +84,27 @@ function agregarCarrito(e){
     let contenedorProd = producto.parentElement
     let prodID = contenedorProd.getAttribute("id")
     let imagen = contenedorProd.querySelector("img").src;
-    agregarElemento(prodID,prodName,precio,imagen)
-    carritoDeCompras.push(new Carrito(prodID,prodName,imagen,precio))
+    let buscar = products.find(elemento => elemento.id == prodID)
+    if(buscar){
+        let productoAgregado = carritoDeCompras.find(elemento => elemento.id == buscar.id)
+        if(productoAgregado){
+            productoAgregado.cantidad += 1
+        }else{
+            carritoDeCompras.push(new Carrito( prodID,prodName,imagen,precio,1))
+            agregarElemento(prodID,prodName,precio,imagen)
+        }
+    }
+    localStorage.setItem("products",JSON.stringify(carritoDeCompras))
+    Swal.fire({
+        background: "#fff",
+        position: 'top-end',
+        icon: 'success',
+        title: 'Añadiste al carrito',
+        showConfirmButton: false,
+        timer: 1500
+    })
+    actualizarCarrito()
+    console.log(carritoDeCompras)
 }
 ///Productos en el Carrito/////
 
@@ -104,6 +125,7 @@ function agregarElemento(prodID,prodName,precio,imagen){
     for(let boton of botonesBorrar) {
         boton.addEventListener("click", borrarElemento);
     }
+    actualizarCarrito()
     cantElementosCarrito();
     Swal.fire({
         background: "#fff",
@@ -113,12 +135,14 @@ function agregarElemento(prodID,prodName,precio,imagen){
         showConfirmButton: false,
         timer: 1500
     })
+    actualizarCarrito()
 }
 
 function borrarElemento(e) {
     btn = e.target;
     btn.parentElement.parentElement.remove();
     cantElementosCarrito();
+    actualizarCarrito ();
 }
 
 function cantElementosCarrito() {
