@@ -142,6 +142,14 @@ function borrarElemento(e) {
     btn = e.target;
     btn.parentElement.parentElement.remove();
     cantElementosCarrito();
+    Swal.fire({
+        background: "#fff",
+        position: 'top-end',
+        icon: 'success',
+        title: 'Borraste el producto',
+        showConfirmButton: false,
+        timer: 1500
+    })
     actualizarCarrito ();
 }
 
@@ -178,3 +186,7 @@ const addToCart = document.getElementsByClassName("add-to-cart")
 for(let boton of addToCart){
     boton.addEventListener("click", agregarCarrito)
 }
+
+////ERRORES ///
+//Cuando borro el producto y quiero agregar de nuevo el mismo producto no se agrega al carrito///
+//Total se suma todo lo que agrego pero cuando borro el producto,sigue el resultado final no se actualiza///
