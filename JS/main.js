@@ -146,7 +146,7 @@ function borrarElemento(e) {
         background: "#fff",
         position: 'top-end',
         icon: 'success',
-        title: 'Borraste el producto',
+        title: 'Borraste el producto del carrito',
         showConfirmButton: false,
         timer: 1500
     })
